@@ -1,5 +1,5 @@
 {
-    "name": "Mono container demo",
+    "name": "fullstack-app-auth0-azure-entra",
     "build": {
       "dockerfile": "Dockerfile"
     },
