@@ -1,0 +1,1 @@
+# fullstack-app-auth0-azure-entra
