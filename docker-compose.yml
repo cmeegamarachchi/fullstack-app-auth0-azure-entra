@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80" # Expose the application on port 8080
+    environment:
+      - UVICORN_WORKERS=4 # Example: Custom environment variable for FastAPI/uvicorn
+    restart: unless-stopped
