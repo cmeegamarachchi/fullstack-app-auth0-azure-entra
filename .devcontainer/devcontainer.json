@@ -5,7 +5,8 @@
    },
    "forwardPorts":[
       3000,
-      8000
+      8000,
+      5173
    ],
    "features":{
       "ghcr.io/devcontainers/features/azure-cli:1":{
