@@ -1,0 +1,55 @@
+{
+    "name": "Mono container demo",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    "forwardPorts": [3000,8000],
+	"features": {
+		"ghcr.io/devcontainers/features/azure-cli:1": {},
+		"ghcr.io/stuartleeks/dev-container-features/azure-cli-persistence:0": {}, 
+	},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"prettier.printWidth": 120,
+				"terminal.integrated.shell.linux": "/bin/bash",
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"[python]": {
+					"editor.formatOnSave": true,
+					"editor.defaultFormatter": "ms-python.black-formatter",
+				},
+				"[typescript]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode"
+				},
+				"[javascript]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode"
+				},
+				"azurite.location": "//workspaces/knowledge-engine/_azurite",
+			},
+			"extensions": [
+				"PKief.material-icon-theme",
+				"esbenp.prettier-vscode",
+				"ms-azuretools.vscode-azurefunctions",
+				"ms-vscode-remote.remote-containers",
+				"ms-azuretools.vscode-azurestaticwebapps", // Azure Static Web Apps 
+				"github.vscode-github-actions", // GitHub Actions
+				"GitHub.copilot", // GitHub Copilot
+				"ms-azuretools.vscode-docker", // Docker
+				"humao.rest-client",
+				"dsznajder.es7-react-js-snippets",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-python.black-formatter",
+				"Azurite.azurite" // Azurite
+			],
+			"workbench.iconTheme": "material-icon-theme"
+		}
+	},    
+    "runArgs": ["--privileged"],
+    "mounts": [
+      "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ],
+    "postCreateCommand": "docker --version && docker-compose --version",
+    "remoteUser": "vscode"
+  }
+  
