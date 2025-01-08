@@ -6,6 +6,7 @@ import {
 import HomePage from "./pages/HomePage";
 import ProfilePage from "./pages/ProfilePage";
 import SettingsPage from "./pages/SettingsPage";
+import { ConfigurationProvider } from "./providers/ConfigurationProvider";
 
 
 const router = createBrowserRouter([
@@ -24,5 +25,7 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} ></RouterProvider>
+  return <ConfigurationProvider>
+          <RouterProvider router={router} ></RouterProvider>
+        </ConfigurationProvider>
 } 
